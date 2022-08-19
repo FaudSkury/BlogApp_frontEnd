@@ -1,0 +1,33 @@
+.sideBarLinks-wrapper {
+  width: 80%;
+  margin: 10%;
+}
+.sideBarLinks-wrapper h3 {
+  color: rgb(136, 136, 212);
+}
+.sideBarLinks_links-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5%;
+  margin-left: 3%;
+  padding: 10px 0;
+}
+.sideBarLinks_links-wrapper p {
+  border: 1px solid rgba(212, 212, 212, 0.151);
+  background: rgba(212, 212, 212, 0.151);
+  padding: 5px;
+  text-align: center;
+}
+.tag {
+  background: rgba(0, 213, 255, 0.13);
+  font-weight: 400;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.tag:hover {
+  transform: scale(1.2);
+  text-decoration: none !important;
+}

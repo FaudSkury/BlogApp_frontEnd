@@ -1,0 +1,18 @@
+.dropdown-container {
+  border: 1px solid rgb(0, 212, 255);
+  border-top: none;
+  margin: 0 10%;
+  list-style: none;
+  padding: 5px 0px;
+}
+.dropdown-container li {
+  width: 100%;
+  padding: 10px;
+}
+.dropdown-container li:hover {
+  background: rgba(128, 128, 128, 0.151);
+}
+
+.focus {
+  background: rgba(128, 128, 128, 0.151);
+}

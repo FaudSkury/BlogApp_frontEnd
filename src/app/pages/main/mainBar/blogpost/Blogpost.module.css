@@ -1,0 +1,32 @@
+.blogpost-container h2 {
+  color: rgb(136, 136, 212);
+}
+.blogpost-container h2 span:last-of-type {
+  font-size: 0.8rem;
+}
+.blogspot-content__wrapper h5 {
+  color: rgb(0, 212, 255);
+  font-size: 1rem;
+}
+.blogspot-content__wrapper h5:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.blogpost-footer__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.blogpost-footer__wrapper p:first-of-type {
+  font-weight: 700;
+  color: gray;
+}
+.blogpost-footer__wrapper p span {
+  background: rgba(0, 213, 255, 0.13);
+  font-weight: 400;
+  margin: 5px;
+  padding: 8px;
+
+  text-align: center;
+  border-radius: 10px;
+}

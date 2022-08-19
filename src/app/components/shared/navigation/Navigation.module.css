@@ -1,0 +1,15 @@
+.nav-container_list li {
+  display: inline-block;
+  margin: 0 1rem;
+  font-size: 2em;
+  font-weight: 500;
+}
+.nav-container_list li :last-of-type {
+  font-style: italic;
+  font-size: 2rem;
+}
+.nav-container_list *:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
