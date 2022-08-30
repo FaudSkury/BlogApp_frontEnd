@@ -1,12 +1,9 @@
 .sortedPostsBar-author-info__wrapper {
   text-align: center;
-  margin: 5% 10%;
+  margin: 5% 0;
   width: 80%;
 }
-.sortedPostsBar-author-info__wrapper h2, h3 {
+.sortedPostsBar-author-info__wrapper h2,
+h3 {
   display: inline;
-}
-.sortedPostsBar-posts__wrapper {
-  margin: 0 15%;
-  width: 80%;
 }

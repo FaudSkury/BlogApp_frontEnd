@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { authActions } from "../../../store/auth-slice";
 import { useAppSelector, useAppDispatch } from "../../../store/hooks";
 
@@ -30,13 +30,12 @@ const Navigation = () => {
     <div>
       <nav className={styles["nav-container"]}>
         <ul className={styles["nav-container_list"]}>
-          <li>About</li>
-          <li>Contact</li>
+         
           {auth.isLoggedIn && (
             <li>
-              <Link className="link" to="/write">
+              <NavLink className="link" to="/write">
                 Write
-              </Link>
+              </NavLink>
             </li>
           )}
           <Button onClick={handleClick} className="nav">

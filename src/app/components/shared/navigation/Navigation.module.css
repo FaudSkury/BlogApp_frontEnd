@@ -10,6 +10,5 @@
 }
 .nav-container_list *:hover {
   cursor: pointer;
-  text-decoration: underline;
   transform: scale(1.1);
 }

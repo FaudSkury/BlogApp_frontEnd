@@ -9,8 +9,9 @@ const Blogpost: React.FC<{
   author: string;
   content: string;
   tags: string[];
-  date: Date;
+  date: Date | string;
 }> = (props) => {
+  
   const [showMore, setShowMore] = useState(false);
 
   const params = useParams();
@@ -48,12 +49,10 @@ const Blogpost: React.FC<{
         </h5>
       </div>
       <div className={classes["blogpost-footer__wrapper"]}>
-        <p>{"Posted: " + props.date.toLocaleDateString()} </p>
-        <p>
-          {props.tags.map((tag, i) => {
-            return <Tag key={i} name={tag} path={`/post/${tag}`} />;
-          })}
-        </p>
+        <p>{"Posted: " + props.date} </p>
+        {props.tags.map((tag, i) => {
+          return <Tag key={i} name={tag} path={`/post/${tag}`} />;
+        })}
       </div>
     </div>
   );

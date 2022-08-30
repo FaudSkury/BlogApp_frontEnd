@@ -32,10 +32,11 @@ const SortedPostsBar: React.FC<{ posts: Post[] }> = (props) => {
           {authorName ? "Posts created by" : `Sorted by tag: ${postTitle}`}
         </h3>
         <h2> {authorName}</h2>
-        <hr />
+        <hr style={{marginTop: "15px"}} />
       </div>
+      
       <div className={classes["sortedPostsBar-posts__wrapper"]}>
-        <MainBar posts={Posts} />
+        <MainBar  />
       </div>
     </div>
   );

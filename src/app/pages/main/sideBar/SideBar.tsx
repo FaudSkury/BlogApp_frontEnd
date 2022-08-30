@@ -16,7 +16,7 @@ const SideBar = () => {
   }, []);
 
   return (
-    <div style={{ flexBasis: "25%" }}>
+    <div style={{ flexBasis: "25%", marginRight: "3%", marginTop: "2%" }}>
       <SearchBar />
       <SideBarLinks title="Popular Tags" tags={tags} />
     </div>

@@ -40,15 +40,15 @@
   outline: none;
 }
 .write {
-  width: 80%;
-  text-align: center;
+  width: 100%;
+  margin: 15px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 15px;
+  align-items: flex-start;
+  
 }
 .write input {
-  width: 90%;
+  width: 80%;
   border: 2px solid #ccc;
   border-radius: 4px;
   outline: none;
@@ -56,9 +56,11 @@
   text-align: center;
 }
 .write label {
+  text-align: center;
   margin-bottom: 3%;
   font-weight: 600;
   font-size: 1.5rem;
+  width: 80%;
 }
 .write textarea {
   padding: 12px 20px;
@@ -68,6 +70,6 @@
   font-size: 16px;
   resize: none;
   outline: none;
-  width: 90%;
+  width: 80%;
   height: 500px;
 }

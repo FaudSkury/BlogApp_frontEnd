@@ -50,7 +50,7 @@ const MainPage = () => {
     <main className={classes["mainPage-container"]}>
       <SideBar />
       <Routes>
-        <Route path="/" element={<MainBar posts={DUMMY_BLOGPOSTS} />} />
+        <Route path="/" element={<MainBar />} />
         <Route
           path="/author/:authorName"
           element={<AuthorsBar posts={DUMMY_BLOGPOSTS} />}
@@ -61,7 +61,7 @@ const MainPage = () => {
         />
         {auth.isLoggedIn && <Route path="/write" element={<WriteBar />} />}
 
-        <Route path="*" element={<MainBar posts={DUMMY_BLOGPOSTS} />} />
+        <Route path="*" element={<MainBar />} />
       </Routes>
     </main>
   );
