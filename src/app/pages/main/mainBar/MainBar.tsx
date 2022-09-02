@@ -1,36 +1,33 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { mainActions } from "../../../store/main-slice";
+import { useHttp, responseData } from "../../../hooks/use-http";
+
 import Blogpost from "./blogpost/Blogpost";
+
 import classes from "./MainBar.module.css";
 
 import { Post } from "../MainPage";
-
+interface getBlogpostsRequestData extends responseData {}
 const MainBar = () => {
+  const { isLoading, error, sendRequest } = useHttp();
   const dispatch = useAppDispatch();
   const main = useAppSelector((state) => state.main);
-  console.log(main.posts);
-  type responseObj = {
-    message: string;
-    blogPostsFound: Post[];
-  };
 
   useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const response = await fetch("http://localhost:4000/blogPost/5");
-        if (response.ok) {
-          const data: responseObj = await response.json();
-          dispatch(mainActions.addPosts(data.blogPostsFound));
-        }
-        if (!response.ok) {
-          throw new Error("Something went wrong!");
-        }
-      } catch (error) {
-        console.log(error);
-      }
+    const abortController = new AbortController();
+    const { signal } = abortController;
+    sendRequest(
+      { url: "http://localhost:4000/blogPost/5" },
+
+      (data: getBlogpostsRequestData) => {
+        dispatch(mainActions.addPosts(data.blogPostsFound));
+      },
+      signal
+    );
+    return () => {
+      abortController.abort();
     };
-    getPosts();
   }, []);
 
   return (

@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { authActions } from "../../store/auth-slice";
 import { useAppDispatch } from "../../store/hooks";
+import { useHttp } from "../../hooks/use-http";
 import Button from "../shared/button/Button";
 
 import Input from "../shared/input/Input";
@@ -18,6 +19,9 @@ const AuthForm: React.FC<{ modalHandler: () => void }> = (props) => {
   });
 
   const [userIsLogginIn, setUserIsLoggingIn] = useState(true);
+
+  const { isLoading, error, sendRequest } = useHttp();
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -39,10 +43,26 @@ const AuthForm: React.FC<{ modalHandler: () => void }> = (props) => {
     setUserIsLoggingIn(!userIsLogginIn);
   };
 
+  let url: string;
+  userIsLogginIn
+    ? (url = "http://localhost:4000/auth/login")
+    : (url = "http://localhost:4000/auth/signup");
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    console.log(authInput);
-    dispatch(authActions.login());
+
+    const requestData = sendRequest(
+      {
+        url: url,
+        method: "POST",
+        body: authInput,
+      },
+      (data) => {
+        if (!error && !isLoading) {
+          return dispatch(authActions.login(data));
+        }
+      }
+    );
+
     props.modalHandler();
   };
 

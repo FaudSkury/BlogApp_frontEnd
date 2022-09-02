@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useAppSelector } from "../../../store/hooks";
 
 import Button from "../../../components/shared/button/Button";
 import Input from "../../../components/shared/input/Input";
+
 import classes from "./WriteBar.module.css";
 
 export type Post = {
@@ -12,8 +14,10 @@ export type Post = {
 };
 
 const WriteBar = () => {
+  const authState = useAppSelector((state) => state.auth);
+
   const [blogPost, setBlogPost] = useState<Post>({
-    author: "Bartosz Gembala",
+    author: authState.userName as string,
     title: "",
     content: "",
     tags: "string",
